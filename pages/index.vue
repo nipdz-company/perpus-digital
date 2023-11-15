@@ -1,13 +1,15 @@
 <template>
   <div class="container">
-      <img class="logosmk" src="@/assets/img/logosmkn4.png" />
+    <img class="logosmk" src="@/assets/img/logosmkn4.png" />
     <div class="title">
       <h1 class="judul">Catatan Daftar Pengunjung Perpustakaan Digital</h1>
-      <!-- <img class="logoperpus" src="@/assets/img/logoperpus.png"> -->
+
     </div>
-    <img class="homeimg" src="@/assets/img/home.png">
-    <button class="submitbtn" onclick="myFunction()">Isi Sekarang</button>
-    <button class="seedetail">See Detail</button>
+    <!-- <img class="homeimg" src="@/assets/img/home.png"> -->
+    <div class="button-action text-end">
+      <NuxtLink class="btn btn-light rounded-pill " to="/form">Isi Sekarang</NuxtLink>
+      <NuxtLink class="btn btn-light rounded-pill ms-3" to="/visitors">See Detail</NuxtLink>
+    </div>
   </div>
 </template>
     <!-- <div v-for="(formulir, index) in datas" :key="formulir.id">
@@ -19,7 +21,7 @@
     </div> -->
 
 
-<script>
+<!-- <script>
   export default {
   }
 
@@ -27,7 +29,7 @@
     alert("terimakasih telah mengisi ");
 }
 
-</script>
+</script> -->
 
 <script setup>
 
@@ -36,8 +38,8 @@ const datas = ref([])
 
 async function getData() {
   const { data } = await supabase
-  .from("formulir")
-  .select()
+    .from("formulir")
+    .select()
   datas.value = data
 }
 
@@ -50,76 +52,71 @@ onMounted(() => {
 
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Josefin+Sans:wght@400;500&display=swap');
 
 
-  .container{
-    background-color:#28353D;
-    width: 100%;
-    height: 100%;
-  }
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.container {
+  margin: 0;
+  background-color: #28353D;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+}
 
 
 
-  .judul{
-    text-align: center;
-    color: white;
-    font-style: italic;
-    font-weight: 10;
-    font-size: 40px;
-  }
+.judul {
+  text-align: center;
+  color: white;
+  font-family: 'Handlee', cursive;
+  font-weight: 10;
+  font-size: 40px;
+  width: 50%;
+  margin: auto;
+}
 
 
-  .homeimg{
-  width: 500px;
-  height: 400px;
-  flex-shrink: 0;
-  margin-left: 50px;
-  }
+.homeimg {
+  width: 100%;
+  height: 100%;
+  margin-left: 60px;
+  padding-top: 30px;
+  background: transparent url ("@/assets/img/home.png") no-repeat center center fixed;
+  background-size: cover;
+}
 
 
-  .logosmk{
+.logosmk {
   width: 83px;
   height: 84px;
   padding-top: 20px;
-  padding-left: 10px;
-  }
-
-  .logoperpus{
-    width: 100px;
-    height: 100px;
-    padding-left: 75%;
-  }
-
-  .submitbtn{
-  border-radius: 100px;
-  background: #E6E6E6;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  width: 170px;
-  height: 70px;
-  transform: rotate(-0.812deg);
-  flex-shrink: 0;
-  color: #000;
-  text-align: center;
-  font-size: 20px;
-  margin-left: 65%;
-  font-family: 'Josefin Sans', sans-serif;
-  }
+  padding-left: 20px;
+  position: relative;
+}
 
 
-  .seedetail{
+
+.btn-light {
   border-radius: 17px;
   background: #D9D9D9;
-  width: 170px;
-  height: 70px;
-  transform: rotate(-0.812deg);
-  flex-shrink: 0;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 150px;
+  height: 50px;
+  /* transform: rotate(-0.812deg); */
   color: #000;
   text-align: center;
+  padding-top: 10px;
   font-size: 20px;
-  margin-left: 50px;
-  margin-bottom: 15px;
+  margin-top: 35%;
   font-family: 'Josefin Sans', sans-serif;
-  }
 
+}
 </style>
