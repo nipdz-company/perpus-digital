@@ -1,16 +1,16 @@
 <template>
   <div class="container">
+    <div class="img">
     <img class="logosmk" src="@/assets/img/logosmkn4.png" />
-    <div class="title">
-      <h1 class="judul">Catatan Daftar Pengunjung Perpustakaan Digital</h1>
-
-    </div>
-    <!-- <img class="homeimg" src="@/assets/img/home.png"> -->
-    <div class="button-action text-end">
-      <NuxtLink class="btn btn-light rounded-pill " to="/form">Isi Sekarang</NuxtLink>
-      <NuxtLink class="btn btn-light rounded-pill ms-3" to="/visitors">See Detail</NuxtLink>
-    </div>
+    <img class="logoklmpk" src="@/assets/img/logoklmpk.png" />
   </div>
+    <div class="title">
+      <h1 class="judul">Catatan Kunjungan Perpustakaan Digital</h1>
+    </div>
+    <img class="homeimg" src="@/assets/img/home.png" />
+      <NuxtLink class="btn btn-light rolunded-pil " to="/form">Isi Kunjungan</NuxtLink>
+      <NuxtLink class="btn btn-light rounded-pill ms-4" to="/visitors">Riwayat</NuxtLink>
+    </div>
 </template>
     <!-- <div v-for="(formulir, index) in datas" :key="formulir.id">
       <div>{{ index + 1 }}</div>
@@ -64,9 +64,10 @@ body {
 }
 
 .container {
+  max-width: 100%;
   margin: 0;
   background-color: #28353D;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-size: cover;
 }
@@ -77,32 +78,35 @@ body {
   text-align: center;
   color: white;
   font-family: 'Handlee', cursive;
-  font-weight: 10;
-  font-size: 40px;
-  width: 50%;
+  font-weight: 60px;
+  font-size: 50px;
   margin: auto;
 }
 
+.img {
+  display: grid;
+  grid-template-columns: 90% 90%;
+}
 
 .homeimg {
-  width: 100%;
-  height: 100%;
-  margin-left: 60px;
-  padding-top: 30px;
-  background: transparent url ("@/assets/img/home.png") no-repeat center center fixed;
-  background-size: cover;
+  width: 40%;
+  height: 60%;
+  padding-left: 10%;
 }
 
 
 .logosmk {
-  width: 83px;
-  height: 84px;
-  padding-top: 20px;
-  padding-left: 20px;
-  position: relative;
+  margin-top: 15px;
+  width: 65px;
+  height: 65px;
 }
 
-
+.logoklmpk {
+  width: 100px;
+  height: 100px;
+  margin-left: 3.5%;
+  align-items: end;
+}
 
 .btn-light {
   border-radius: 17px;
@@ -115,8 +119,9 @@ body {
   text-align: center;
   padding-top: 10px;
   font-size: 20px;
-  margin-top: 35%;
+  margin-top: 30%;
   font-family: 'Josefin Sans', sans-serif;
-
+  margin-left: 33%;
 }
+
 </style>
