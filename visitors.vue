@@ -8,8 +8,8 @@
             <h3>Visit History</h3>
           </div>
           <div class="card-body">
-            <div > total pengunjung : {{ datas.length }} </div>
-            <table class="table table-striped rounded-pil">
+            <div> total pengunjung : {{ datas.length }} </div>
+            <table class="table rounded-pil">
               <thead>
                 <tr class="table-dark">
                   <th class="text-center">No</th>
@@ -53,7 +53,7 @@
           </div>
         </div>
         <div class="kls text-end">
-            <NuxtLink class="btn btn-dark rolunded-pil" to="/">back</NuxtLink>
+          <NuxtLink class="btn btn-dark rolunded-pil" to="/">back</NuxtLink>
         </div>
       </div>
     </div>
@@ -90,7 +90,7 @@ async function kirim() {
 
 
 async function bacaData() {
-  const { data, error } = await supabase.from('formulir').select().order('date', {ascending: false})
+  const { data, error } = await supabase.from('formulir').select().order('date', { ascending: false })
   if (data)
     console.log(data)
   datas.value = data
@@ -108,7 +108,9 @@ onMounted(() => bacaData())
 
 @import url('https://fonts.googleapis.com/css2?family=Handlee&family=Josefin+Sans:wght@400;500&display=swap');
 
-
+.table-dark th {
+  border: 1px solid gray;
+}
 
 td {
   border: .5px solid gray;
@@ -119,7 +121,7 @@ td {
 }
 
 td:nth-child(even) {
-  background-color:#AAC7D7;
+  background-color: #AAC7D7;
 }
 
 
@@ -147,11 +149,6 @@ td {
   font-size: 20px;
   margin: 30px;
   font-family: 'Josefin Sans', sans-serif;
-}
-
-table {
-  border: 1px solid #000;
-  width: 100%;
 }
 
 .button-action {
