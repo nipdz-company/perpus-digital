@@ -1,12 +1,15 @@
 <template>
   <div class="container">
+    <div class="img">
     <img class="logosmk" src="@/assets/img/logosmkn4.png" />
+    <img class="logoklmpk" src="@/assets/img/logoklmpk.png" />
+  </div>
     <div class="title">
       <h1 class="judul">Catatan Kunjungan Perpustakaan Digital</h1>
     </div>
     <img class="homeimg" src="@/assets/img/home.png" />
       <NuxtLink class="btn btn-light rolunded-pil " to="/form">Isi Kunjungan</NuxtLink>
-      <NuxtLink class="btn btn-light rounded-pill ms-3" to="/visitors">Lihat Detail</NuxtLink>
+      <NuxtLink class="btn btn-light rounded-pill ms-4" to="/visitors">Riwayat</NuxtLink>
     </div>
 </template>
     <!-- <div v-for="(formulir, index) in datas" :key="formulir.id">
@@ -80,23 +83,30 @@ body {
   margin: auto;
 }
 
+.img {
+  display: grid;
+  grid-template-columns: 90% 90%;
+}
 
 .homeimg {
   width: 40%;
-  height: 75%;
-  margin-left: 10%;
+  height: 60%;
+  padding-left: 10%;
 }
 
 
 .logosmk {
-  width: 83px;
-  height: 84px;
-  padding-top: 20px;
-  padding-left: 20px;
-  position: relative;
+  margin-top: 15px;
+  width: 65px;
+  height: 65px;
 }
 
-
+.logoklmpk {
+  width: 100px;
+  height: 100px;
+  margin-left: 3.5%;
+  align-items: end;
+}
 
 .btn-light {
   border-radius: 17px;
@@ -111,8 +121,7 @@ body {
   font-size: 20px;
   margin-top: 30%;
   font-family: 'Josefin Sans', sans-serif;
-  margin-left: 21%;
-  
-
+  margin-left: 33%;
 }
+
 </style>
